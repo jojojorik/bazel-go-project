@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "service",
+    srcs = [
+        "leaderboard.go",
+        "questions.go",
+    ],
+    importpath = "github.com/jojojorik/bazel-go-project/internal/service",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//internal/models",
+        "//internal/repository",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

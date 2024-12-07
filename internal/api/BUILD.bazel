@@ -1,0 +1,17 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "api",
+    srcs = [
+        "handlers.go",
+        "routes.go",
+    ],
+    importpath = "github.com/jojojorik/bazel-go-project/internal/api",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//internal/models",
+        "//internal/service",
+        "@com_github_gorilla_mux//:mux",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

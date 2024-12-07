@@ -1,0 +1,6 @@
+POST http://localhost:8080/questions/674227f70075a320e48bd876/answer
+
+{
+    "user": "eben",
+    "answer": "Canberra"
+}
